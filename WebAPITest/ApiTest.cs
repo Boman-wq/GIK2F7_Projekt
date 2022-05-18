@@ -28,7 +28,6 @@ namespace WebAPITest
         [TestMethod]
         public async Task GetAllGames_ShouldReturnAllGames()
         {
-            var asd = 1;
             var gameList = new List<Game>();
             gameList.Add(new Game { Id = 1, Name = "game1", Description = "Short1", Grade = 1, Image = "N/A1"});
             gameList.Add(new Game { Id = 2, Name = "game2", Description = "Short2", Grade = 2, Image = "N/A2" });
@@ -80,17 +79,43 @@ namespace WebAPITest
         public async Task DeleteGame_ShouldReturn()
         {
 
-            //var game = new Game
-            //{
-            //    Id = 1,
-            //    Name = "Game",
-            //    Description = "Short",
-            //    Grade = 2,
-            //    Image = "N/A"
-            //};
-            _gameRepoMock.Setup(x => x.Delete(-1)).ReturnsAsync(false);
+            var game = new Game
+            {
+                Id = 1,
+                Name = "Game",
+                Description = "Short",
+                Grade = 2,
+                Image = "N/A"
+            };
+            _gameRepoMock.Setup(x => x.Delete(It.IsAny<int>()));
 
-            var deleteGame = await _sut.Delete(-1);
+            await _sut.Delete(1);
+
+            var delete = _gameRepoMock.Object.GetAll();
+
+            _gameRepoMock.Verify(x => x.Delete(1));
+        }
+
+        [TestMethod]
+        public async Task UpdateGame_ShouldReturn()
+        {
+            var game = new Game
+            {
+                Id = 1,
+                Name = "Game",
+                Description = "Short",
+                Grade = 2,
+                Image = "N/A"
+            };
+            
+
+            _gameRepoMock.Setup(x => x.Add(game)).ReturnsAsync(game);
+            
+
+            var get = await _sut.GetGame(1);
+            get.Name = "NewGame";
+
+            Assert.IsNotNull(get);
 
         }
     }
