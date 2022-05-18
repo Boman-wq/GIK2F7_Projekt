@@ -90,7 +90,6 @@ namespace WebAPITest
             _gameRepoMock.Setup(x => x.Delete(-1)).ReturnsAsync(false);
 
             var deleteGame = await _sut.Delete(-1);
-            var asd = 1;
 
         }
     }
