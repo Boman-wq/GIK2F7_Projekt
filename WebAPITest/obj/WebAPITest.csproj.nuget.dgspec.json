@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\46730\\Desktop\\Skola\\WebAPITest\\WebAPITest.csproj": {}
+    "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\ProjektWebApi.csproj": {
+    "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\ProjektWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
         "projectName": "ProjektWebApi",
-        "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\ProjektWebApi.csproj",
+        "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
         "packagesPath": "C:\\Users\\46730\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\obj\\",
+        "outputPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\46730\\Desktop\\Skola\\WebAPITest\\WebAPITest.csproj": {
+    "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\46730\\Desktop\\Skola\\WebAPITest\\WebAPITest.csproj",
+        "projectUniqueName": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj",
         "projectName": "WebAPITest",
-        "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\WebAPITest\\WebAPITest.csproj",
+        "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj",
         "packagesPath": "C:\\Users\\46730\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\46730\\Desktop\\Skola\\WebAPITest\\obj\\",
+        "outputPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -117,8 +117,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\ProjektWebApi.csproj": {
-                "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt\\ProjektWebApi.csproj"
+              "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj": {
+                "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj"
               }
             }
           }

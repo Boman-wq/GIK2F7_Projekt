@@ -26,7 +26,7 @@ namespace WebAPITest
             _sut = new GameController(_gameRepoMock.Object, _webMock.Object);
         }
         [TestMethod]
-        public async Task GetALL_Test()
+        public async Task GetAllGames_ShouldReturnAllGames()
         {
             var gameList = new List<Game>();
             gameList.Add(new Game { Id = 1, Name = "game1", Description = "Short1", Grade = 1, Image = "N/A1"});
@@ -40,7 +40,7 @@ namespace WebAPITest
         }
 
         [TestMethod]
-        public async Task test()
+        public async Task GetGameById_ShouldReturnGame()
         {
             // Arrange
             var gameId = 1;
@@ -76,7 +76,7 @@ namespace WebAPITest
         }
 
         [TestMethod]
-        public async Task Test_delete()
+        public async Task DeleteGame_ShouldReturn()
         {
 
             //var game = new Game
@@ -90,6 +90,7 @@ namespace WebAPITest
             _gameRepoMock.Setup(x => x.Delete(-1)).ReturnsAsync(false);
 
             var deleteGame = await _sut.Delete(-1);
+            var asd = 1;
 
         }
     }
