@@ -28,6 +28,10 @@ namespace WebAPITest
         [TestMethod]
         public async Task GetAllGames_ShouldReturnAllGames()
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7a4b2ea6cf95b894cac715c41f61e5a8b489dd08
             var gameList = new List<Game>();
             gameList.Add(new Game { Id = 1, Name = "game1", Description = "Short1", Grade = 1, Image = "N/A1"});
             gameList.Add(new Game { Id = 2, Name = "game2", Description = "Short2", Grade = 2, Image = "N/A2" });
