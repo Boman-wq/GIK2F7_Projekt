@@ -19,7 +19,7 @@ namespace Catalog.Controllers
     {
         private readonly IGameRepository repository;
         private readonly ILogger<GameController> logger;
-        public GameController(IGameRepository repository, IWebHostEnvironment environmnet, ILogger<GameController> logger) // 
+        public GameController(IGameRepository repository, ILogger<GameController> logger) // 
         {
             this.repository = repository;
             this.logger = logger;

@@ -13,7 +13,8 @@ namespace Catalog.Dtos
         public string Description { get ; set; }
 
         [Required]
-        public string Grade { get; set; }
+        [Range(1, 10)]
+        public int Grade { get; set; }
 
         public string Image { get; set; }
         

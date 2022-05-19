@@ -1,16 +1,15 @@
-using Autofac.Extras.Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjektWebApi;
-using ProjektWebApi.Repositories;
-using ProjektWebApi.Models;
+using Catalog.Reposotories;
+using Catalog.Models;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using ProjektWebApi.Controllers;
+using Catalog.Controllers;
 using System.Threading.Tasks;
 using Moq;
 using Microsoft.AspNetCore.Hosting;
 using FluentAssertions;
 using System;
+using Microsoft.Extensions.Logging;
 // Arrange
 
 // Act
@@ -23,23 +22,23 @@ namespace WebAPITest
     {
         private readonly GameController _sut;
         private readonly Mock<IGameRepository> _gameRepoMock = new Mock<IGameRepository>();
-        private readonly Mock<IWebHostEnvironment> _webMock = new Mock<IWebHostEnvironment>();
+        private readonly Mock<ILogger<GameController>> _loggerMock = new Mock<ILogger<GameController>>();
         private readonly Random rand = new();
 
         public ApiTest()
         {
-            _sut = new GameController(_gameRepoMock.Object, _webMock.Object);
+            _sut = new GameController(_gameRepoMock.Object, _loggerMock.Object);
         }
 
         [TestMethod]
         public async Task GetGame_WithUnexistingItem_ShouldReturnNotFound()
         {
             // Arrange
-            _gameRepoMock.Setup(x => x.Get(It.IsAny<int>()))
+            _gameRepoMock.Setup(x => x.GetGame(It.IsAny<Guid>()))
                 .ReturnsAsync((Game)null);
 
             // Act
-            var result = await _sut.GetGame(rand.Next());
+            var result = await _sut.GetGame(It.IsAny<Guid>());
 
             // Assert
             result.Result.Should().BeOfType<NotFoundResult>();
@@ -53,9 +52,9 @@ namespace WebAPITest
             gameList.Add(new Game { Id = 1, Name = "game1", Description = "Short1", Grade = 1, Image = "N/A1"});
             gameList.Add(new Game { Id = 2, Name = "game2", Description = "Short2", Grade = 2, Image = "N/A2" });
 
-            _gameRepoMock.Setup(x => x.GetAll()).ReturnsAsync(gameList);
+            _gameRepoMock.Setup(x => x.GetGames()).ReturnsAsync(gameList);
 
-            var games = await _sut.Get();
+            var games = await _sut.GetGames();
 
             Assert.AreEqual(gameList, games);
         }
@@ -75,7 +74,7 @@ namespace WebAPITest
                 Image = "N/A"
 
             };
-            _gameRepoMock.Setup(x => x.Get(gameId)).ReturnsAsync(gameDto);
+            _gameRepoMock.Setup(x => x.GetGame(gameId)).ReturnsAsync(gameDto);
 
             // Act
             var game = await _sut.GetGame(gameId);
@@ -89,7 +88,7 @@ namespace WebAPITest
         {
             Random random = new Random();
 
-            _gameRepoMock.Setup(x => x.Get(It.IsAny<int>())).ReturnsAsync(() => null);
+            _gameRepoMock.Setup(x => x.GetGame(It.IsAny<Guid>())).ReturnsAsync(() => null);
 
             var game = await _sut.GetGame(random.Next());
 
