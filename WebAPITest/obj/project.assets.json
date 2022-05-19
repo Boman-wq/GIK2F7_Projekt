@@ -7753,7 +7753,6 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Autofac.Extras.Moq >= 6.1.0",
-      "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
       "Catalog >= 1.0.0",
       "FluentAssertions >= 6.6.0",
       "MSTest.TestAdapter >= 2.2.3",
@@ -7800,9 +7799,6 @@
           "projectReferences": {
             "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\Catalog.csproj": {
               "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\Catalog.csproj"
-            },
-            "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj": {
-              "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj"
             }
           }
         }
@@ -7864,16 +7860,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "h5v0yfyyKrWlfwn4U5ekJ48tT8nETeBk2b8TV0DsvSgotfTeueUxBC4IMnBsJsvakbyAlEqI/5vjJ6tcjq/OrQ==",
-  "success": false,
+  "dgSpecHash": "WvS1EmUimHCEgBXI83XsEaxoRnY0SoeacS/epQuGA2gptsIHg0ZZJDKbk62eF6knPO21oW8pPXoY38leIdx69Q==",
+  "success": true,
   "projectFilePath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\46730\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
@@ -130,15 +130,5 @@
     "C:\\Users\\46730\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\46730\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -42,7 +42,59 @@ namespace WebAPITest
 
             // Assert
             result.Result.Should().BeOfType<NotFoundResult>();
+        }
+        [TestMethod]
+        public async Task GetGame_WithExistingItem_ShouldReturnExpectedItem()
+        {
+            // Arrange
+            Game expectedGame = CreateRandomGame();
 
+            _gameRepoMock.Setup(x => x.GetGame(It.IsAny<Guid>())).ReturnsAsync(expectedGame);
+
+            // Act
+            var result = await _sut.GetGame(Guid.NewGuid());
+
+            // Assert
+            result.Value.Should().BeEquivalentTo(expectedGame);
+
+        }
+        [TestMethod]
+        public async Task GetGames_WithExistingItem_ShouldReturnAllItems()
+        {
+            var expectedItems = new[] { CreateRandomGame(), CreateRandomGame(), CreateRandomGame(), CreateRandomGame() };
+            throw new NotImplementedException();
+        }
+        [TestMethod]
+        public async Task GetItems_WithMatchingItems_ShouldReturnMatchingItems()
+        {
+            throw new NotImplementedException();
+        }
+        [TestMethod]
+        public async Task CreateGame_WithgameToCreate_ShouldReturnCreatedGame()
+        {
+            throw new NotImplementedException();
+        }
+        [TestMethod]
+        public async Task Updategame_WithExistingGame_ShouldReturnNoContent()
+        {
+            throw new NotImplementedException();
+        }
+        public async Task DeleteGames_WithExistingGame_ShouldReturnNoContent()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private Game CreateRandomGame()
+        {
+            return new()
+            {
+                Id = Guid.NewGuid(),
+                Name = Guid.NewGuid().ToString(),
+                Description = Guid.NewGuid().ToString(),
+                Grade = rand.Next(1, 10),
+                Image = Guid.NewGuid().ToString(),
+            };
         }
     }
 }
