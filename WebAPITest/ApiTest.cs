@@ -56,7 +56,7 @@ namespace WebAPITest
 
             // Assert
             result.Value.Should().BeEquivalentTo(expectedGame);
-
+            var asd = 123;
         }
         [TestMethod]
         public async Task GetGames_WithExistingItem_ShouldReturnAllItems()
@@ -82,6 +82,7 @@ namespace WebAPITest
         [TestMethod]
         public async Task DeleteGames_WithExistingGame_ShouldReturnNoContent()
         {
+            var asd = 1;
             throw new NotImplementedException();
         }
 
