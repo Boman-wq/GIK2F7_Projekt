@@ -82,6 +82,7 @@ namespace WebAPITest
         [TestMethod]
         public async Task DeleteGames_WithExistingGame_ShouldReturnNoContent()
         {
+            var asd = 1;
             throw new NotImplementedException();
         }
 
