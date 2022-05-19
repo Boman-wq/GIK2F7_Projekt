@@ -63,6 +63,7 @@ namespace WebAPITest
         {
             var expectedItems = new[] { CreateRandomGame(), CreateRandomGame(), CreateRandomGame(), CreateRandomGame() };
             throw new NotImplementedException();
+            var test = 1;
         }
         [TestMethod]
         public async Task GetItems_WithMatchingItems_ShouldReturnMatchingItems()
