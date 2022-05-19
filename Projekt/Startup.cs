@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catalog.Reposotories;
+using Catalog.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,10 +13,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using ProjektWebApi.Database;
-using ProjektWebApi.Repositories;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 
-namespace ProjektWebApi
+namespace Catalog
 {
     public class Startup
     {
@@ -28,35 +32,38 @@ namespace ProjektWebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+            BsonSerializer.RegisterSerializer(new StringSerializer(BsonType.String));
+            BsonSerializer.RegisterSerializer(new DateTimeSerializer(BsonType.String));
 
-            services.AddControllers();
+            services.AddSingleton<IMongoClient>(ServiceProvider => 
+            {
+                var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+                return new MongoClient(settings.ConnectionString);
+            });
 
-            var config = Configuration.GetSection("Database");
-            // create database config with values from appsettings.json
-            services.AddSingleton(new DatabaseConfig { Name = config.GetValue<string>("Name"), StructureFile = config.GetValue<string>("StructureFile") });
-            services.AddSingleton<IDatabaseBootstrap, DatabaseBootstrap>();
-            services.AddSingleton<IGameRepository, GameRepository>();
+            services.AddSingleton<IGameRepository, MongoDbGameRepository>();
+
+            services.AddControllers(options => {
+                options.SuppressAsyncSuffixInActionNames = false;
+            });
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjektWebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Catalog", Version = "v1" });
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                // app.UseSwagger();
-                // app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProjektWebApi v1"));
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog v1"));
             }
 
-            //app.UseHttpsRedirection();
-            app.UseSwagger();
-            app.UseSwaggerUI(e => {
-                e.SwaggerEndpoint("/swagger/v1/swagger.json", "GameApi");
-            });
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -66,8 +73,6 @@ namespace ProjektWebApi
             {
                 endpoints.MapControllers();
             });
-            // Run setup to access database
-            serviceProvider.GetService<IDatabaseBootstrap>().Setup();
         }
     }
 }
