@@ -44,55 +44,5 @@ namespace WebAPITest
             result.Result.Should().BeOfType<NotFoundResult>();
 
         }
-
-        [TestMethod]
-        public async Task GetAllGames_ShouldReturnAllGames()
-        {
-            var gameList = new List<Game>();
-            gameList.Add(new Game { Id = 1, Name = "game1", Description = "Short1", Grade = 1, Image = "N/A1"});
-            gameList.Add(new Game { Id = 2, Name = "game2", Description = "Short2", Grade = 2, Image = "N/A2" });
-
-            _gameRepoMock.Setup(x => x.GetGames()).ReturnsAsync(gameList);
-
-            var games = await _sut.GetGames();
-
-            Assert.AreEqual(gameList, games);
-        }
-
-        [TestMethod]
-        public async Task GetGameById_ShouldReturnGame()
-        {
-            // Arrange
-            var gameId = 1;
-            var gameName = "Game";
-            var gameDto = new Game
-            {
-                Id = gameId,
-                Name = gameName,
-                Description = "Short",
-                Grade = 2,
-                Image = "N/A"
-
-            };
-            _gameRepoMock.Setup(x => x.GetGame(gameId)).ReturnsAsync(gameDto);
-
-            // Act
-            var game = await _sut.GetGame(gameId);
-
-            // Assert
-            //Assert.AreEqual(gameId, game.Id);
-            //Assert.AreEqual(gameName, game.Name);
-        }
-        [TestMethod]
-        public async Task GetById_ShouldReturnNothing_WhenGameDoesNotExist()
-        {
-            Random random = new Random();
-
-            _gameRepoMock.Setup(x => x.GetGame(It.IsAny<Guid>())).ReturnsAsync(() => null);
-
-            var game = await _sut.GetGame(random.Next());
-
-            Assert.IsNull(game);
-        }
     }
 }

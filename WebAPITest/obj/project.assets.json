@@ -7753,7 +7753,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Autofac.Extras.Moq >= 6.1.0",
-      "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj",
+      "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
       "Catalog >= 1.0.0",
       "FluentAssertions >= 6.6.0",
       "MSTest.TestAdapter >= 2.2.3",
@@ -7764,20 +7764,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tjaxel\\.nuget\\packages\\": {}
+    "C:\\Users\\46730\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\WebAPITest\\WebAPITest.csproj",
+      "projectUniqueName": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj",
       "projectName": "WebAPITest",
-      "projectPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\WebAPITest\\WebAPITest.csproj",
-      "packagesPath": "C:\\Users\\tjaxel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\WebAPITest\\obj\\",
+      "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\WebAPITest.csproj",
+      "packagesPath": "C:\\Users\\46730\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\WebAPITest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\tjaxel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\46730\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7790,11 +7798,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\Catalog.csproj": {
-              "projectPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\Catalog.csproj"
+            "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\Catalog.csproj": {
+              "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\Catalog.csproj"
             },
-            "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj": {
-              "projectPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj"
+            "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj": {
+              "projectPath": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj"
             }
           }
         }
@@ -7853,7 +7861,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -7861,8 +7869,8 @@
     {
       "code": "NU1104",
       "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj",
+      "message": "Unable to find project 'C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\46730\\Desktop\\Skola\\Projekt_GIK2F7\\unit-testing-webapi\\GIK2F7_Projekt\\Projekt\\ProjektWebApi.csproj",
       "targetGraphs": [
         "net5.0"
       ]
