@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "Z02+Fwf30oLkA318MltkIlmRML2Jf+16HM/SFqNVTSsSVsZ3IqSpIU88fmFDaLiUgN1xOwYUW8OI8JIjUCidPA==",
-  "success": false,
+  "dgSpecHash": "ZsNQenG0hT1TxjNbf1ObE/FRkYUxkPlg60SzVh6ouq8kpRTcipyb+83+u9c0kfeOQ5ilFDlTrsVW/O6Klf8Vxw==",
+  "success": true,
   "projectFilePath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\WebAPITest\\WebAPITest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tjaxel\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
@@ -130,15 +130,5 @@
     "C:\\Users\\tjaxel\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\tjaxel\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

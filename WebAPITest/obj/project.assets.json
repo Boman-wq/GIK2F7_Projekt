@@ -7753,7 +7753,6 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Autofac.Extras.Moq >= 6.1.0",
-      "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj",
       "Catalog >= 1.0.0",
       "FluentAssertions >= 6.6.0",
       "MSTest.TestAdapter >= 2.2.3",
@@ -7792,9 +7791,6 @@
           "projectReferences": {
             "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\Catalog.csproj": {
               "projectPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\Catalog.csproj"
-            },
-            "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj": {
-              "projectPath": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj"
             }
           }
         }
@@ -7856,16 +7852,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\tjaxel\\OneDrive\\Dokument\\SKOLA\\mjukvarutest-gmi2j3\\projekt_unittest\\Projekt\\ProjektWebApi.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

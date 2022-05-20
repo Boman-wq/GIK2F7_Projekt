@@ -26,9 +26,12 @@ namespace Catalog.Controllers
         }
         
         [HttpGet]
-        public async Task<IEnumerable<GameDto>> GetGames()
+        public async Task<IEnumerable<GameDto>> GetGames(string name = null)
         {
             var games = (await repository.GetGames()).Select(game => game.AsDto());
+            if(!string.IsNullOrEmpty(name))
+                games = games.Where(game => game.Name.Contains(name, StringComparison.OrdinalIgnoreCase));
+
             logger.LogInformation($"{DateTime.UtcNow.ToString("hh:mm:ss")}: Retrived {games.Count()} forms");
             return games;
         }
