@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using FluentAssertions;
 using System;
 using Microsoft.Extensions.Logging;
+using Catalog.Dtos;
 // Arrange
 
 // Act
@@ -29,6 +30,8 @@ namespace WebAPITest
         {
             _sut = new GameController(_gameRepoMock.Object, _loggerMock.Object);
         }
+
+        
 
         [TestMethod]
         public async Task GetGame_WithUnexistingItem_ShouldReturnNotFound()
@@ -56,22 +59,48 @@ namespace WebAPITest
 
             // Assert
             result.Value.Should().BeEquivalentTo(expectedGame);
-            var asd = 123;
         }
         [TestMethod]
         public async Task GetGames_WithExistingItem_ShouldReturnAllItems()
         {
+            // Arrange
             var expectedItems = new[] { CreateRandomGame(), CreateRandomGame(), CreateRandomGame(), CreateRandomGame() };
-            throw new NotImplementedException();
-            var test = 1;
+
+            // Act
+            _gameRepoMock.Setup(x => x.GetGames())
+                .ReturnsAsync(expectedItems);
+
+            var actualItems = await _sut.GetGames();
+
+            // Assert
+            actualItems.Should().BeEquivalentTo(expectedItems);
         }
         [TestMethod]
         public async Task GetItems_WithMatchingItems_ShouldReturnMatchingItems()
         {
-            throw new NotImplementedException();
+            // Arrange
+            Game[] games = new[]
+            {
+                new Game(){Name = "CS:GO"},
+                new Game(){Name = "LoL"},
+                new Game(){Name = "WoW"}
+            };
+            var name = "WoW";
+
+            _gameRepoMock.Setup(x => x.GetGames()).ReturnsAsync(games);
+
+            // Act
+            IEnumerable<GameDto> foundGames = await _sut.GetGames(name);
+
+
+            // Assert
+            foundGames.Should().OnlyContain(
+                game => game.Name == games[0].Name || game.Name == games[2].Name
+                );
+
         }
         [TestMethod]
-        public async Task CreateGame_WithgameToCreate_ShouldReturnCreatedGame()
+        public async Task CreateGame_WithGameToCreate_ShouldReturnCreatedGame()
         {
             throw new NotImplementedException();
         }
@@ -83,7 +112,6 @@ namespace WebAPITest
         [TestMethod]
         public async Task DeleteGames_WithExistingGame_ShouldReturnNoContent()
         {
-            var asd = 1;
             throw new NotImplementedException();
         }
 
